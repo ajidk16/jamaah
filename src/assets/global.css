@@ -1,0 +1,11 @@
+.maroon-muda {
+  @apply bg-gradient-to-r from-red1 to-red2
+}
+
+.gradient-red {
+  @apply bg-gradient-to-r from-[#E82320] to-[#FA504D]
+}
+
+.gradient-green {
+  @apply bg-gradient-to-r from-[#01F91A] top-[#359B05]
+}
