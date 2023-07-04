@@ -1,15 +1,23 @@
 import {
   IcHaji,
+  IcHotelAkomodasi,
+  IcJam,
   IcJasaBadal,
+  IcKategori,
+  IcMaskapai,
   IcPerjalanan,
   IcSearch,
+  IcSeatTersisa,
+  IcSudahBerangkat,
   IcTabungan,
   IcTambahPaket,
   IcTambahStarting,
   IcTanggal,
+  IcTotalSeat,
   IcUmrah,
+  Icdatecard,
 } from '../assets/icons';
-import { PMecca } from '../assets/png';
+import { PImage8, PMecca } from '../assets/png';
 import { Button, Header } from '../components';
 
 const searchPacket = [
@@ -37,6 +45,18 @@ const services = [
   { icon: IcTabungan, title: 'Tabungan', desc: 'Tersedia 20 paket' },
   { icon: IcJasaBadal, title: 'Jasa Badal', desc: 'Tersedia 20 paket' },
 ];
+
+interface shortFlexState {
+  icon: string;
+  title: string;
+}
+
+const ShortFlex = ({ icon, title }: shortFlexState) => (
+  <div className="flex items-center gap-x-2">
+    <img src={icon} alt="date" className="w-4 h4 object-cover" />
+    <h6 className="text-12">{title}</h6>
+  </div>
+);
 
 function LandingPage() {
   return (
@@ -91,6 +111,57 @@ function LandingPage() {
               </div>
             </div>
           ))}
+        </div>
+        <div className="grid grid-cols-4 gap-6 mt-12">
+          {Array(8)
+            .fill('oka')
+            .map((item, idx) => (
+              <div
+                key={`catalog-${idx}`}
+                className="shadow-sm bg-white relative"
+              >
+                <div className="relative">
+                  <img
+                    src={
+                      'https://images.unsplash.com/photo-1668701649406-83c46add1b1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80'
+                    }
+                    alt="title"
+                    className="h-250 w-full rounded-3xl object-cover relative"
+                  />
+                </div>
+                <div className="rounded-2xl bg-white p-4 mb-4 shadow-md mx-4 relative -mt-10">
+                  <h2 className="font-semibold">
+                    Umrah Bersama Ustadz Muhammad Abduh Tuasikal
+                  </h2>
+                  <div className="flex justify-between items-center mt-3">
+                    <ShortFlex icon={IcTotalSeat} title="45 Total Seat" />
+                    <ShortFlex icon={IcSeatTersisa} title="Seat Hampir Habis" />
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 items-center gap-2 mx-4">
+                  <ShortFlex icon={Icdatecard} title="12 September 2025" />
+                  <ShortFlex icon={IcJam} title="12 Hari" />
+                  <ShortFlex icon={IcMaskapai} title="12 September 2025" />
+                  <ShortFlex icon={IcSudahBerangkat} title="Madinah" />
+                  <ShortFlex
+                    icon={IcHotelAkomodasi}
+                    title="12 September 2025"
+                  />
+                  <ShortFlex icon={IcKategori} title="Paket VIP" />
+                </div>
+                <div className="flex justify-between items-center">
+                  <div className="flex items-center gap-x-2">
+                    <h4 className="text-20 text-green-600 font-semibold bg-clip-text">
+                      Rp 35.000.000
+                    </h4>
+                    / Pax
+                  </div>
+                  <div className="text-white">
+                    <Button title="Lihat Paket" />
+                  </div>
+                </div>
+              </div>
+            ))}
         </div>
       </section>
     </main>

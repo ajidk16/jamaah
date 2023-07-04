@@ -12,6 +12,10 @@ export default {
       },
       height: {
         690: '690px',
+        250: '250px',
+      },
+      width: {
+        302: '302px',
       },
       fontSize: {
         12: '12px',
