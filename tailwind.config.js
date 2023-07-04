@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        'gray-1': '#F3F3F4',
-        'gray-black': '#4F4F4F',
+        agakblack: '#F3F3F4',
+        grayblack: '#4F4F4F',
         red1: '#FF3733',
         red2: '#9A1212',
         icongray: '#BDBDBD',
