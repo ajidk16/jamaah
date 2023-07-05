@@ -17,7 +17,20 @@ import {
   IcUmrah,
   Icdatecard,
 } from '../assets/icons';
-import { PImage8, PMecca } from '../assets/png';
+import {
+  PImage1,
+  PImage2,
+  PImage3,
+  PImage4,
+  PImage5,
+  PImage6,
+  PImage7,
+  PImage8,
+  PImage9,
+  PMecca,
+  Pimage10,
+  Pimage11,
+} from '../assets/png';
 import { Button, Header } from '../components';
 
 const searchPacket = [
@@ -118,7 +131,7 @@ function LandingPage() {
             .map((item, idx) => (
               <div
                 key={`catalog-${idx}`}
-                className="shadow-sm bg-white relative"
+                className="shadow-sm bg-white relative rounded-3xl"
               >
                 <div className="relative">
                   <img
@@ -149,7 +162,7 @@ function LandingPage() {
                   />
                   <ShortFlex icon={IcKategori} title="Paket VIP" />
                 </div>
-                <div className="flex justify-between items-center">
+                <div className="flex justify-between items-center px-4 mt-4  pb-6">
                   <div className="flex items-center gap-x-2">
                     <h4 className="text-20 text-green-600 font-semibold bg-clip-text">
                       Rp 35.000.000
@@ -157,11 +170,44 @@ function LandingPage() {
                     / Pax
                   </div>
                   <div className="text-white">
-                    <Button title="Lihat Paket" />
+                    <Button className="px-3 py-1" title="Lihat Paket" />
                   </div>
                 </div>
               </div>
             ))}
+        </div>
+      </section>
+      <section className="bg-white rounded-3xl p-8 shadow-sm relative">
+        <h1 className="text-24 font-semibold mb-8">
+          Gallery foto dan video <br />
+          dari Perjalanan kami bersama para Jamaah
+        </h1>
+        <div className="grid grid-cols-5 gap-4 relative">
+          {[
+            PImage3,
+            PImage4,
+            PImage5,
+            PImage2,
+            PImage6,
+            PImage7,
+            PImage8,
+            PImage9,
+            Pimage10,
+            Pimage11,
+          ].map((item, idx) => (
+            <div key={`galery-${idx}`} className="flex flex-wrap">
+              <img
+                src={item}
+                alt="ok"
+                className="object-cover relative rounded-2xl grow h-96"
+              />
+            </div>
+          ))}
+        </div>
+        <div className="flex justify-center items-center w-full h-48 absolute bottom-0 rounded-b-3xl bg-white opacity-90">
+          <button className="text-lg font-semibold border border-red-500 text-red-500 py-4 rounded-2xl px-6">
+            Lihat Semua Foto dan Video
+          </button>
         </div>
       </section>
     </main>
