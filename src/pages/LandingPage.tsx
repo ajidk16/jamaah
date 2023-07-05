@@ -210,6 +210,15 @@ function LandingPage() {
           </button>
         </div>
       </section>
+      <section className="bg-white rounded-3xl p-8 shadow-sm relative">
+        <h1 className="text-24 font-semibold">Artikel</h1>
+        <p className="text-lg">
+          Baca Artikel terbaru dari kami{' '}
+          <span className="text-red-500 capitalize ml-6 cursor-pointer font-semibold">
+            lihat semua
+          </span>
+        </p>
+      </section>
     </main>
   );
 }
